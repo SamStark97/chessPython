@@ -16,7 +16,10 @@ class Pawn(object):
         self._team = team
 
     def __str__(self):
-        return 'Pawn'
+        if self._team == 0:
+            return 'wPawn'
+        else:
+            return 'bPawn'
 
     def move_piece(self, start, end, enemy_piece_at_end):
         move_is_legal = LEGAL
@@ -46,7 +49,10 @@ class Knight(object):
         self._team = team
 
     def __str__(self):
-        return 'Knight'
+        if self._team == 0:
+            return 'wKnight'
+        else:
+            return 'bKnight'
 
 class Bishop(object):
     def __init__(self, team, board_file, board_rank):
@@ -54,7 +60,10 @@ class Bishop(object):
         self._team = team
 
     def __str__(self):
-        return 'Bishop'
+        if self._team == 0:
+            return 'wBishop'
+        else:
+            return 'bBishop'
 
 class Rook(object):
     def __init__(self, team, board_file, board_rank):
@@ -62,7 +71,10 @@ class Rook(object):
         self._team = team
 
     def __str__(self):
-        return 'Rook'
+        if self._team == 0:
+            return 'wRook'
+        else:
+            return 'bRook'
 
 class Queen(object):
     def __init__(self, team, board_file, board_rank):
@@ -70,7 +82,10 @@ class Queen(object):
         self._team = team
 
     def __str__(self):
-        return 'Queen'
+        if self._team == 0:
+            return 'wQueen'
+        else:
+            return 'bQueen'
 
 class King(object):
     def __init__(self, team, board_file, board_rank):
@@ -78,4 +93,7 @@ class King(object):
         self._team = team
 
     def __str__(self):
-        return 'King'
+        if self._team == 0:
+            return 'wKing'
+        else:
+            return 'bKing'

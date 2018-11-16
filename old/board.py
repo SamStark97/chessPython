@@ -7,14 +7,16 @@ import pandas as pd
 "CONSTANTS"
 WHITE = 0
 BLACK = 1
+COLUMNS = ['A','B','C', 'D', 'E', 'F', 'G', 'H']
 
-
+def get_coords(board_file, board_rank):
+    return COLUMNS.index(board_file, 9-board_rank)
 
 
 class Board(object):
 
     def __init__(self):
-        self._board = pd.DataFrame(columns=['A','B','C', 'D', 'E', 'F', 'G', 'H'], index=[8,7,6,5,4,3,2,1])
+        self._board = pd.DataFrame(columns=COLUMNS, index=[8,7,6,5,4,3,2,1])
         self._turn = WHITE
         self._castling = (0, 0)
 
@@ -92,6 +94,7 @@ class Board(object):
 
         self._board.loc[end_pos[1], end_pos[0]] = piece
         self._board.loc[start_pos[1], start_pos[0]] = None
+
 
 
         print(self._board)
